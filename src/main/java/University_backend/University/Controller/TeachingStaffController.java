@@ -11,19 +11,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/teaching-staff")
-@CrossOrigin("*")
+
 public class TeachingStaffController {
 
     @Autowired
     private TeachingStaffService teachingStaffService;
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public ResponseEntity<TeachingStaff> addTeachingStaff(@RequestBody TeachingStaff teachingStaff) {
         TeachingStaff savedStaff = teachingStaffService.addTeachingStaff(teachingStaff);
         return ResponseEntity.ok(savedStaff);
     }
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public ResponseEntity<List<TeachingStaff>> getAllTeachingStaff() {
         List<TeachingStaff> staffList = teachingStaffService.getAllTeachingStaff();
         return ResponseEntity.ok(staffList);
