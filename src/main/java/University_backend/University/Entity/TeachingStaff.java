@@ -21,6 +21,7 @@ public class TeachingStaff {
     private String email;
     private String phoneNumber;
     private String department;
+    private String specialization;
     private String designation;
     private LocalDate dateOfJoining;
     private String highestQualification;

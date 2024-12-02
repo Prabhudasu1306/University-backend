@@ -36,6 +36,7 @@ public class TeachingStaffService {
         existingStaff.setEmail(teachingStaffDetails.getEmail());
         existingStaff.setPhoneNumber(teachingStaffDetails.getPhoneNumber());
         existingStaff.setDepartment(teachingStaffDetails.getDepartment());
+        existingStaff.setSpecialization(teachingStaffDetails.getSpecialization());
         existingStaff.setDesignation(teachingStaffDetails.getDesignation());
         existingStaff.setDateOfJoining(teachingStaffDetails.getDateOfJoining());
         existingStaff.setHighestQualification(teachingStaffDetails.getHighestQualification());
@@ -46,5 +47,9 @@ public class TeachingStaffService {
 
     public void deleteTeachingStaff(Long id) {
         teachingStaffRepository.deleteById(id);
+    }
+
+    public List<TeachingStaff> getStaffByDepartment(String department) {
+        return teachingStaffRepository.findByDepartment(department);
     }
 }

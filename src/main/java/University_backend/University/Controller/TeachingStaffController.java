@@ -48,4 +48,9 @@ public class TeachingStaffController {
         teachingStaffService.deleteTeachingStaff(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/by-department/{department}")
+    public ResponseEntity<List<TeachingStaff>> getStaffByDepartment(@PathVariable String department) {
+        List<TeachingStaff> staff = teachingStaffService.getStaffByDepartment(department);
+        return ResponseEntity.ok(staff);
+    }
 }
