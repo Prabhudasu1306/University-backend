@@ -13,8 +13,6 @@ public class CoursesService {
 
     @Autowired
     private CoursesRepository coursesRepository;
-
-
     public Courses addCourse(Courses course) {
         return coursesRepository.save(course);
     }

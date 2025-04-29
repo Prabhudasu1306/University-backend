@@ -3,17 +3,24 @@ package University_backend.University.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+
+@Data
+@Getter
+@Setter
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Table(name = "Courses")
-@Getter
-@Setter
-public class Courses {
+@Table(name = "Student")
+public class Student {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private int duration;
+
+    private String course;
+
+    private String duration;
+
+    private Long fee;
 }

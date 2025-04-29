@@ -14,9 +14,7 @@ public class Drive {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
-
     private String mobileNumber;
     private Long Salary;
     private int experience;

@@ -3,18 +3,28 @@ package University_backend.University.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @Getter
 @Setter
-@Data
-@Table(name = "signup")
+@Table(name = "user_table")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String fullName;
+
+    private String firstName;
+
+    private String lastName;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
+
+    private String role;
 }

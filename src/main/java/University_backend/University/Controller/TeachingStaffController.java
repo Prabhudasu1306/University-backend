@@ -1,6 +1,4 @@
 package University_backend.University.Controller;
-
-
 import University_backend.University.Entity.TeachingStaff;
 import University_backend.University.Service.TeachingStaffService;
 import org.springframework.beans.factory.annotation.Autowired;

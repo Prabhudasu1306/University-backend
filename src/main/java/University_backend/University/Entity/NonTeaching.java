@@ -1,7 +1,6 @@
 package University_backend.University.Entity;
 import jakarta.persistence.*;
 import lombok.*;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -10,6 +9,9 @@ import lombok.*;
 @Data
 @Table(name = "NonTeaching ")
 public class NonTeaching {
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

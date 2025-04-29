@@ -4,16 +4,21 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Table(name = "Courses")
 @Getter
 @Setter
-public class Courses {
+@Table(name = "Staff")
+public class Staff {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
-    private int duration;
+    private String firstName;
+    private String lastName;
+    private String qualification;
+    private String experience;
+    private String subject;
+
 }

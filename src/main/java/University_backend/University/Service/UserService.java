@@ -1,5 +1,7 @@
 package University_backend.University.Service;
 
+
+
 import University_backend.University.Entity.User;
 import University_backend.University.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,29 +14,45 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private  UserRepository userRepository;
+
 
     public User createUser(User user) {
+        if (user.getRole() == null || user.getRole().isEmpty()) {
+            user.setRole("STUDENT"); // Default role
+        }
         return userRepository.save(user);
     }
+
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    public Optional<User> getUserById(Long id) {
-        return userRepository.findById(id);
+
+    public User getUserById(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        return user.orElseThrow(() -> new RuntimeException("User not found"));
     }
 
+
     public User updateUser(Long id, User userDetails) {
-        User user = userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
-        user.setFullName(userDetails.getFullName());
+        User user = getUserById(id);
+        user.setFirstName(userDetails.getFirstName());
+        user.setLastName(userDetails.getLastName());
         user.setEmail(userDetails.getEmail());
         user.setPassword(userDetails.getPassword());
+        user.setRole(userDetails.getRole());
         return userRepository.save(user);
     }
 
+
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
+    }
+
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
