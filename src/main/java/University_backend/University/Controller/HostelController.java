@@ -40,4 +40,7 @@ public class HostelController {
     public void deleteHostel(@PathVariable Long id) {
         hostelService.deleteHostel(id);
     }
+
+    public static class ResultsController {
+    }
 }

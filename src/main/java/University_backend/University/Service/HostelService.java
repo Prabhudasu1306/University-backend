@@ -29,6 +29,8 @@ public class HostelService {
     public Hostel updateHostel(Long id, Hostel updatedHostel) {
         return hostelRepository.findById(id).map(hostel -> {
             hostel.setFirstName(updatedHostel.getFirstName());
+            hostel.setBedNo(updatedHostel.getBedNo());
+            hostel.setFloor(updatedHostel.getFloor());
             hostel.setLastName(updatedHostel.getLastName());
             hostel.setBranch(updatedHostel.getBranch());
             hostel.setRoomNo(updatedHostel.getRoomNo());

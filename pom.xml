@@ -48,6 +48,13 @@
 			<artifactId>spring-websocket</artifactId>
 			<version>7.0.0-M3</version>
 		</dependency>
+		<!-- Apache POI for Excel -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.2</version>
+		</dependency>
+
 		<!-- pom.xml -->
 		<dependency>
 			<groupId>com.razorpay</groupId>

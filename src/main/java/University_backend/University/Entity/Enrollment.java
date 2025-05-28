@@ -17,7 +17,7 @@ public class Enrollment {
     private Long id;
 
     private String name;
-    private String fee;
+    private long fee; // Changed from String to long
     private String course;
     private String duration;
     private String paymentId;
